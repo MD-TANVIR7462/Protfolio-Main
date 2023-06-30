@@ -1,55 +1,138 @@
 import React from "react";
+import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import {
   DiJavascript1,
   DiReact,
   DiNodejs,
-  DiGit,
+
 } from "react-icons/di";
 import {
-  SiMaterialui,
-  SiGraphql,
-  SiSolidity,
-  SiRedux,
+  SiExpress,
+  SiFirebase,
+  SiBootstrap,
+  SiTailwindcss,
   SiMongodb,
-  SiHtml5
+  SiHtml5,
+  SiCss3
 } from "react-icons/si";
 
 const Techstack = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Specify the duration of animations in milliseconds
+      // Only animate elements once
+    });
+  }, []);
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiHtml5 />
+    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}  data-aos="fade-left"
+      
+
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"  className="py-5">
+
+      <Col xs={4} md={2} className="tech-icons"
+       data-aos="zoom-in"
+        data-aos-duration="1000"
+        data-aos-easing="zoom-in"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <SiHtml5 /> <p className="fs-6">HTML</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+      
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <SiCss3 /> <p className="fs-5">Css</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+       
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <DiJavascript1 /> <p className="fs-6">Javascript</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+       
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <DiNodejs /> <p className="fs-6">Node js</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiRedux />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+      
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <DiReact /> <p className="fs-6">React Js</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMongodb />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+       
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <SiTailwindcss /> <p className="fs-6">Tailwindcss</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiGraphql />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+      
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <SiMongodb /> <p className="fs-6">Mongodb</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSolidity />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+ 
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <SiFirebase /> <p className="fs-6">Firebase</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMaterialui />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+    
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+        <SiBootstrap /> <p className="fs-6">Bootstrap</p>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
+      <Col xs={4} md={2} className="tech-icons" data-aos="zoom-in"
+
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center"
+        
+        >
+        <SiExpress /> <p className="fs-6">Express</p>
       </Col>
+
     </Row>
   );
 }
 
 export default Techstack;
+

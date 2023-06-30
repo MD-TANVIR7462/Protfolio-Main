@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate
+
 } from "react-router-dom";
 
-import Home from './pages/Home'
-import Skill from './pages/Skillset'
-import Project from './pages/Projects'
-import Resume from './pages/Resume'
-import Contact from './pages/Contact'
 
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+
 import Preloader from "./components/PreLoader"
 import ScrollToTop from "./components/ScrollToTop"
 
 import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import MainPage from "./pages/MainPage";
+// import NavBar from "./components/Navbar/Navbar";
+import Benner from "./pages/Benner";
+import Footer from "./components/Footer/Footer";
+
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -36,17 +33,14 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/skillset" element={<Skill />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/"/>} />
-        </Routes>
-        <Footer />
+        {/* <NavBar></NavBar> */}
+
+        <Benner></Benner>
+        <MainPage></MainPage>
+
+<Footer></Footer>
       </div>
     </Router>
   );

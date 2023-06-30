@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../../assets/sLogo.png";
-// import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-// import { CgGitFork } from "react-icons/cg";
+
+
+
 import {
-  // AiFillStar,
+
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
-  AiOutlineContacts
+  AiOutlineContacts,
+
 } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi"
-import { CgFileDocument } from "react-icons/cg";
+import { Link } from "react-scroll";
+
 
 
 function NavBar() {
@@ -38,9 +39,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
+     
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -51,10 +50,17 @@ function NavBar() {
           <span></span>
           <span></span>
         </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+        <Navbar.Collapse id="">
+          <Nav className="ms-auto" >
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link as={Link} to="home"
+              
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            
+              onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
@@ -62,17 +68,41 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/skillset"
+                to="skill"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              
                 onClick={() => updateExpanded(false)}
               >
-                <GiSkills style={{ marginBottom: "2px" }} /> Skillset
+                <GiSkills style={{ marginBottom: "2px" }} /> Skills
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              
+                onClick={() => updateExpanded(false)}
+              >
+                <GiSkills style={{ marginBottom: "2px" }} /> About Me
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/project"
+                to="project"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineFundProjectionScreen
@@ -82,36 +112,23 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
+     
 
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              
+                to="contact"
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineContacts style={{ marginBottom: "2px" }} /> Contact Me
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/19sajib/portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -120,3 +137,4 @@ function NavBar() {
 }
 
 export default NavBar;
+

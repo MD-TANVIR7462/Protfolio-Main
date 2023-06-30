@@ -8,9 +8,9 @@
 }
 
 .c-left{
-    text-align: center !important;
-    padding-top: 25px;
-    color: white !important;
+    text-align: center ;
+   
+    color: white ;
 }
 
 .c-right{
@@ -65,16 +65,27 @@ textarea{
     top: 1rem;
     left: 8rem;
 }
-
-@media screen and (max-width: 480px) {
+.own{
+    width: 83%;
+}
+.ownBorder{
+    border: 2px solid #40008a;
+    border-radius: 8px;
+    box-shadow: 0 0 9px #7500fa;
+}
+@media screen and (max-width: 400px) {
     .contact-form{
         padding: 0;
         flex-direction: column;
-        gap: 5rem;
+        gap: 3rem;
         height: 40rem;
     }
     .c-right .user{
         width: 16rem;
     }
+    .own{
+        width: 100%;
+    }
+   
 
 }

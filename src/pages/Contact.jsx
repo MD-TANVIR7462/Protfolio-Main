@@ -1,16 +1,19 @@
 import React from 'react'
 import { Container } from "react-bootstrap";
-import Particle from '../components/Particle';
+
 import ContactForm from '../components/Contact/Contact';
 import Social from '../components/Contact/Social';
 
 const Contact = () => {
   return (
-    <Container style={{padding: '60px'}}>
-      <Particle />
-      <ContactForm />
-      <Social />
-    </Container>
+   <div className='contact' id='contace' >
+   <h1 className='text-white text-center pt-5 pb-3'>CONTACT <span className='yellow'>ME </span></h1>
+    <Container >
+
+<ContactForm />
+<Social />
+</Container>
+</div >
   )
 }
 

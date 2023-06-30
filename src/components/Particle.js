@@ -4,14 +4,14 @@ import Particles from "react-tsparticles";
 function Particle() {
   return (
     <Particles
-      id="tsparticles"
+  
       params={{
         particles: {
           number: {
-            value: 160,
+            value: 100,
             density: {
               enable: true,
-              value_area: 1500,
+              area: 1500,
             },
           },
           line_linked: {
@@ -19,7 +19,8 @@ function Particle() {
             opacity: 0.03,
           },
           move: {
-            direction: "right",
+            enable: true,
+            direction: 'right',
             speed: 0.05,
           },
           size: {
@@ -37,7 +38,7 @@ function Particle() {
           events: {
             onclick: {
               enable: true,
-              mode: "push",
+              mode: 'push',
             },
           },
           modes: {

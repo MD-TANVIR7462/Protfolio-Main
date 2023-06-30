@@ -1,15 +1,17 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 
-const Type = () => {
+const Types = () => {
     return (
         <Typewriter
+        
           options={{
             strings: [
-              "MERN Stack Developer",
-              "Passionate Blockchain Enthusiast",
-              "Committed Open Source Contributor",
-              "Effective Problem Solver"
+              "Welcome to my portfolio!",
+              "I'm a MERN stack developer",
+              "With a strong foundation in JavaScript",
+              "Thank For Visite"
+              
             ],
             autoStart: true,
             loop: true,
@@ -19,4 +21,4 @@ const Type = () => {
       )
 }
 
-export default Type
+export default Types

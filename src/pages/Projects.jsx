@@ -1,89 +1,139 @@
+
+
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "../components/Projects/ProjectCard";
-import Particle from "../components/Particle";
-import pg from "../assets/projects/pg.png";
-import project from "../assets/projects/project.jpeg";
-import lift from "../assets/projects/lift.png";
-import krypto from "../assets/projects/krypto.png";
-import kickstart from "../assets/projects/kickstart.png";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { FaGlobe, FaServer, FaCode } from "react-icons/fa";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import { useEffect } from "react";
+import { IconContext } from "react-icons";
 
 const Projects = () => {
+  const projects = [
+        {
+          name: "Dance World",
+          image: "https://i.ibb.co/GcLS6vw/Screenshot-41.png",
+          features:
+            "Dance World - A dynamic and interactive website for a dance summer school, Ignite your passion for dance and embark on an unforgettable journey of self-expression.",
+          link: "https://dance-world-c2149.web.app/",
+          server: "https://github.com/MD-TANVIR7462/Dance-world-server",
+          client: "https://github.com/MD-TANVIR7462/Dance--World-client",
+        },
+        {
+          name: "Toy Land",
+          image: "https://i.ibb.co/28Z3Wtw/Screenshot-43.png",
+          features:
+            "an Online Toy Store Website, Implemented a responsive design approach, ensuring seamless browsing and purchasing across desktop and mobile devices.",
+          link: "https://toy-land-c50d6.web.app/",
+          server: "https://github.com/MD-TANVIR7462/Toyland-server",
+          client: "https://github.com/MD-TANVIR7462/Toyland-Client-main",
+        },
+        {
+          name: "Indian Cafe",
+          image: "https://i.ibb.co/ydztbdF/Screenshot-39.png",
+          features:
+            "an Online Recipe Management System. Implemented user authentication and authorization features, ensuring secure access to personal recipe collections and enabling social sharing capabilities",
+          link: "https://assignment-10-34514.web.app/",
+          server: "https://github.com/MD-TANVIR7462/indian-cafe-server",
+          client: "https://github.com/MD-TANVIR7462/Indian-Cafe-client",
+        },
+      ]
+
+  const handleVisitClick = (link) => {
+    window.open(link, "_blank");
+  };
+
+  const handleServerClick = (link) => {
+    window.open(link, "_blank");
+  };
+
+  const handleClientClick = (link) => {
+    window.open(link, "_blank");
+  };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      mirror: true,
+      once: false,
+      anchorPlacement: "top-center",
+    });
+  }, []);
+
   return (
-    <Container fluid className="project-section">
-      <Particle />
+    <div id="project" className="pt-5">
+      <h1 className="text-center text-white pb-5">
+        My <span className="yellow">Projects</span>
+      </h1>
       <Container>
-        <h1 className="project-heading">
-          Recent Top <strong className="yellow">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={lift}
-              isBlog={false}
-              title="Lift-Buddy"
-              description="This online ride-sharing platform boasts a responsive front-end design, complete with an admin panel built using React and Material-UI. With the integration of Google Maps API, users can easily access directions on the map. The platform allows for full CURD functionality on profiles and posts, and users can confirm or cancel a ride from a post and message each other after confirmation. Additionally, users can easily reset their password. The back-end is powered by a Node Express server and utilizes MongoDB for the database management."
-              ghLink="https://github.com/19sajib/lift-buddy"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={project}
-              isBlog={false}
-              title="Social Media"
-              description="This platform features a responsive interface built with Reactjs and CSS, allowing users to easily manage their profiles and posts through CRUD activities. The option to follow other users and interact with their posts (like or dislike) is also available, with suggestions for new users to follow. Users can only view posts from their followed users and can only engage in chat with those they follow. The backend is powered by Nodejs and Expressjs server, while MongoDB is utilized as the database."
-              ghLink="https://github.com/19sajib/social-media"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={kickstart}
-              isBlog={false}
-              title="E‑Commerce Website"
-              description="This ecommerce website utilizes a REST API built with Nodejs and Expressjs, allowing for easy CRUD operations on user profiles, products and admin panel. The user interface is designed for efficient product management and includes a complete purchase process. The admin panel, accessible for CRUD on users and products, includes a chart for statistics display. Stripe API is integrated to handle customer payments. The website uses MongoDB and Firebase as the database."
-              ghLink="https://github.com/19sajib/mern-stack-ecommerce"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={pg}
-              isBlog={false}
-              title="Blog Website"
-              description="This blogging application features a RESTful API server built with Nodejs and Expressjs. The data is retrieved from the API server and displayed on a user-friendly interface designed using React, Redux, and styled-components for a seamless experience."
-              ghLink="https://github.com/19sajib/mern-blog-app"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={krypto}
-              isBlog={false}
-              title="Project Krypto"
-              description="Project Krypto is a Web 3 project that utilizes an Ethereum smart contract created using Solidity. It allows users to interact with their Metamask wallet and send Ethereum."
-              ghLink="https://github.com/19sajib/Project-Krypto-Web-3.0"
-              demoLink="https://project-krypto.netlify.app/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={kickstart}
-              isBlog={false}
-              title="Solidity Kickstart"
-              description="Solidity Kickstart is a Web 3 project that utilizes an Ethereum smart contract created using Solidity. It includes all the functionality of a kickstart platform, enabling users to interact with their Metamask wallet, transfer Ethereum and participate in kickstart campaigns."
-              ghLink="https://github.com/19sajib/Solidity-Kickstart"
-            />
-          </Col>
+        <Row className="justify-content-center">
+          {projects.map((project, index) => (
+            <Col
+              key={index}
+              sm={6}
+              md={4}
+              className="mb-4"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center"
+            >
+              <Card className="text-center project-card">
+                <Card.Img variant="top" src={project.image} />
+                <Card.Body>
+                  <Card.Title>{project.name}</Card.Title>
+                  <Card.Text>{project.features}</Card.Text>
+                  <div className="" >
+                    <Button
+                      variant="primary"
+                      onClick={() => handleVisitClick(project.link)}
+                      className="mx-2 text-light project-button"
+                    >
+                      <IconContext.Provider
+                        value={{ style: { verticalAlign: "middle" } }}
+                      >
+                        <FaGlobe />
+                      </IconContext.Provider>{" "}
+                      Visit
+                    </Button>
+                    <Button
+                      variant="success"
+                      onClick={() => handleServerClick(project.server)}
+                      className="project-button"
+                    >
+                      <IconContext.Provider
+                        value={{ style: { verticalAlign: "middle" } }}
+                      >
+                        <FaServer />
+                      </IconContext.Provider>{" "}
+                      Server
+                    </Button>
+                    <Button
+                      variant="info"
+                      className="mx-2  mt-2 mt-md-0 text-light "
+                      onClick={() => handleClientClick(project.client)}
+                    >
+                      <IconContext.Provider
+                        value={{ style: { verticalAlign: "middle" } }}
+                      >
+                        <FaCode />
+                      </IconContext.Provider>{" "}
+                      Client
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </Container>
-    </Container>
-  )
-}
+    </div>
+  );
+};
 
-export default Projects
+export default Projects;
+
+
