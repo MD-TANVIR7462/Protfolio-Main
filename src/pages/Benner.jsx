@@ -38,10 +38,10 @@ const Benner = () => {
             <Col md={5} style={{ paddingBottom: 20 }} className='image_div'>
             
               <img
-                src="https://i.ibb.co/7vcGJG9/IMG-20230630-134813-1.jpg"
+                src="https://i.ibb.co/hFx7HRw/Md-Tajul-Islam-Tanvir-2-Photoroom-png-Photoroom.png"
                 alt="home pic"
                 className="img-fluid img"
-                style={{ maxHeight: "450px" }}
+                style={{ maxHeight: "500px" }}
               />
             </Col>
           </Row>

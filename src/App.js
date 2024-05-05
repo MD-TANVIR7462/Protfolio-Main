@@ -40,7 +40,7 @@ function App() {
         <Benner></Benner>
         <MainPage></MainPage>
 
-<Footer></Footer>
+        <Footer></Footer>
       </div>
     </Router>
   );

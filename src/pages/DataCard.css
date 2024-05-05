@@ -1,0 +1,120 @@
+.data-card {
+   position: relative;
+   border: 1px solid #e0e0e0;
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   margin: 20px;
+   transition: transform 0.2s ease-in-out;
+   height: 600px;
+ 
+ }
+ 
+ .data-card:hover {
+   transform: scale(1.03);
+ }
+ 
+ .image-container img {
+   width: 100%;
+   height:350px;
+   object-fit: cover;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+ }
+ 
+ .card-content {
+   padding: 20px;
+ }
+ 
+ .card-content h2 {
+   font-size: 1.2rem;
+   color: #333;
+   margin: 0;
+   padding: 0;
+   transition: transform 0.2s ease-in-out;
+ }
+ 
+ .data-card:hover .card-content h2 {
+   transform: translateY(-10px);
+ }
+ 
+ .card-content p {
+   font-size: 1rem;
+   color: #666;
+   margin-top: 10px;
+ }
+ 
+ .card-content .buttons {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   margin-top: 20px;
+ }
+ 
+ .card-content a {
+   text-decoration: none;
+   background-color: #007BFF;
+   color: white;
+   padding: 8px 16px;
+   border-radius: 5px;
+   margin-right: 10px;
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add border-color transition */
+   border: 2px solid transparent; /* Add transparent border */
+ }
+ 
+ .data-card:hover .card-content a {
+   opacity: 1;
+   transform: translateY(-10px);
+   border-color: transparent; /* Make the border transparent when hovered */
+ }
+ 
+ /* Add hover effect for buttons */
+ .card-content a:hover {
+   background-color: #0056b3;
+   border-color: transparent; /* Make the border transparent when hovered */
+ }
+ 
+ .github-links a {
+   font-size: 1rem;
+   color: #333;
+ }
+ 
+ .details-link {
+   text-decoration: none;
+   background-color: #007BFF;
+   color: white;
+   padding: 8px 16px;
+   border-radius: 5px;
+   margin-top: 20px;
+   margin-left: 10px;
+   transition: background-color 0.3s ease-in-out;
+ }
+ 
+ .details-link:hover {
+   background-color: #0056b3;
+ }
+ 
+ /* Responsive Styles */
+ @media (max-width: 768px) {
+   .data-card {
+     margin: 10px;
+
+   }
+ }
+ 
+ @media (max-width: 576px) {
+   .data-card {
+     margin: 10px 0;
+   
+   }
+ 
+   .card-content h2 {
+     font-size: 1.5rem;
+   }
+ 
+   .card-content p {
+     font-size: 0.8rem;
+   }
+ }
+ 
